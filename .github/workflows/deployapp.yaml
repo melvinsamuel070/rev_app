@@ -24,7 +24,7 @@ jobs:
             docker push melvinsamuel070/frontend1:1
 
         - name: github token decrealation
-          run: echo ${{secrets.GITHUB_TOKEN}}    
+          run: echo ${{ secrets.DOCKERHUB_TOKEN }}    
 
 
         - name: "Go to the repo for Helm"
@@ -41,4 +41,4 @@ jobs:
             git add -A
             git commit -m "Updated helm"
 
-            # git push origin master
+             git push origin master
