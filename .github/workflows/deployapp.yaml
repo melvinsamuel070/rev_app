@@ -24,14 +24,14 @@ jobs:
             docker push melvinsamuel070/frontend1:1
 
         - name: github token decrealation
-          run: echo ${{ secrets.DOCKERHUB_TOKEN }}    
+          run:  echo ${{ secrets.DOCKERHUB_TOKEN }}    
 
 
         - name: "Go to the repo for Helm"
           run: |
 
-            git config --global user.email "theoafactor@gmail.com"
-            git config --global user.name "Olu Adeyemo"
+            git config --global user.email "melvinsamuel070@gmail.com"
+            git config --global user.name "melvinsamuel070"
             git clone https://github.com/melvinsamuel070/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
@@ -40,5 +40,4 @@ jobs:
             cat deployment.yaml
             git add -A
             git commit -m "Updated helm"
-
-             git push origin master
+            git push origing master
