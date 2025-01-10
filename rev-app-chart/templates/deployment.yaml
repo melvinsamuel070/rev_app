@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata: 
-  name: rev-app
+  name: frontend1
 spec: 
   selector:
     matchLabels: 
-      app: rev-app 
+      app: frontend1 
   template:
     metadata:
       labels: 
-        app: rev-app
+        app: frontend1
     spec:
       containers: 
-      - name: rev-app
-        image: theoafactor/rev_app:1
+      - name: frontend1
+        image: melvinsamuel070/frontend1:1
         ports: 
-        - containerPort: 80
+        - containerPort: 3000
 
       
