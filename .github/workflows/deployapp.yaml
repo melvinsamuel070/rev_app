@@ -41,6 +41,4 @@ jobs:
             git add -A
             git commit -m "Updated helm"
             git push origing master
-            git diff --quiet; then
-            echo "No changes to commit."
-            exit 0 
+            
