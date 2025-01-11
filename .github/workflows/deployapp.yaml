@@ -23,10 +23,6 @@ jobs:
           run: |
             docker push melvinsamuel070/frontend1:1
 
-        - name: github token decrealation
-          run:  echo ${{ secrets.DOCKERHUB_TOKEN }}    
-
-
         - name: "Go to the repo for Helm"
           run: |
 
@@ -36,10 +32,12 @@ jobs:
             cd rev_app_helm 
             cd rev-app-chart/templates
             sed -i 's/rev_app:1/rev_app:2/' deployment.yaml
-            
+            sed -i 's/rev_app:1/rev_app:2/' service.yaml
             cat deployment.yaml
             cat service.yaml
             git add -A
             git commit -m "Updated helm"
+            git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/my-repo.git
+            # git fetch origin
             git push origing master
             
