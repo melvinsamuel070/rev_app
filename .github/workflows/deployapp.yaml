@@ -35,6 +35,7 @@ jobs:
             # sed -i 's/rev_app:1/rev_app:2/' service.yaml
             cat deployment.yaml
             # cat service.yaml
+            git status
             git add -A
             git commit -m "Updated helm"
             git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/my-repo.git
