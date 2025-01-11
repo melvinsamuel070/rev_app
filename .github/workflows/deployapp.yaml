@@ -39,5 +39,5 @@ jobs:
             git commit -m "Updated helm"
             git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/my-repo.git
             # git fetch origin
-            git push origing master
+            git push origin master
             
