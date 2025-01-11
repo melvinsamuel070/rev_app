@@ -40,5 +40,7 @@ jobs:
             git commit -m "Updated helm"
             git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/my-repo.git
             # git fetch origin
+            git remote -v
+
             git push melvin master
             
