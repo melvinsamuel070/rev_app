@@ -13,7 +13,7 @@ jobs:
         
         - name: "Build the Docker image"
           run: |
-            docker build -t melvinsamuel070/frontend1:2 .
+            docker build -t melvinsamuel070/frontend1:1 .
 
         - name: "LOgin to Docker"
           run: |
@@ -21,7 +21,7 @@ jobs:
 
         - name: "Push the Docker image to the Hub"
           run: |
-            docker push melvinsamuel070/frontend1:2
+            docker push melvinsamuel070/frontend1:1 
 
         - name: "Go to the repo for Helm"
           run: |
@@ -31,14 +31,14 @@ jobs:
             git clone https://github.com/melvinsamuel070/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
-            sed -i 's/rev_app:1/rev_app:1/' deployment.yaml
+            sed -i 's/frontend1:1/frontend1:2/' deployment.yaml
             # sed -i 's/rev_app:1/rev_app:2/' service.yaml
             cat deployment.yaml
             # cat service.yaml
             git status
             git add -A
             git commit -m "Updated helm"
-            git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/my-repo.git
+            git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
             # git fetch origin
             git remote -v
 
