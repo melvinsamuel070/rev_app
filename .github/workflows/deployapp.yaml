@@ -35,15 +35,13 @@ jobs:
             git clone https://github.com/melvinsamuel070/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
-            sed -i 's/frontend1:1/frontend1:2/' deploy.yaml
+            sed -i 's/frontend1:1/frontend1:2/' deployment.yaml
             # sed -i 's/rev_app:1/rev_app:2/' service.yaml
-            cat deplo.yaml
+            cat deployment.yaml
             # cat service.yaml
             git status
             git add .
             git commit -m "Updated helm"
             git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
-            git remote -v
-
             git push melvin master
             
