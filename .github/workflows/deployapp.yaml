@@ -19,10 +19,6 @@ jobs:
           run: |
             docker login -u melvinsamuel070 -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
-        - name: "Set the token"
-          run: |
-            echo ${{ secrets.DOCKERHUB_TOKEN }}
-
         - name: "Push the Docker image to the Hub"
           run: |
             docker push melvinsamuel070/frontend1:1 
