@@ -13,7 +13,7 @@ jobs:
         
         - name: "Build the Docker image"
           run: |
-            docker build -t melvinsamuel070/frontend1:1 .
+            docker pull melvinsamuel070/frontend1:1
         
         - name: "LOgin to Docker"
           run: |
