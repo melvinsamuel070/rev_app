@@ -39,7 +39,7 @@ jobs:
             # sed -i 's/rev_app:1/rev_app:2/' service.yaml
             cat deployment.yaml
             # cat service.yaml
-            git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
+            git remote add rev_app_helm https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
             git add .
             # git commit -m "Updated helm"
             # # git push melvin master
