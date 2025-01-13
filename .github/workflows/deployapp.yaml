@@ -41,6 +41,6 @@ jobs:
             # cat service.yaml
             git remote add rev_app_helm https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
             git add .
-            # git commit -m "Updated helm"
-            # # git push melvin master
+            git commit -m "Updated helm"
+            git push melvin master
             
