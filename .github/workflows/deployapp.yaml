@@ -11,20 +11,22 @@ jobs:
         - name: "checkout from workflows"
           uses: actions/checkout@v4
         
-        # - name: "Build the Docker image"
-        #   run: |
-        #     docker build -t melvinsamuel070/frontend1:1 .
         - name: "Build the Docker image"
           run: |
-            docker pull melvinsamuel070/frontend1
+            docker build -t melvinsamuel070/frontend1:1 .
+        
         - name: "LOgin to Docker"
           run: |
             docker login -u melvinsamuel070 -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
+        - name: "Set the token"
+          run: |
+            echo ${{ secrets.GITHUB_TOKEN }}
+
         - name: "Push the Docker image to the Hub"
           run: |
             docker push melvinsamuel070/frontend1:1 
-
+       
         - name: "Go to the repo for Helm"
           run: |
 
@@ -41,8 +43,6 @@ jobs:
             git status
             git add .
             git commit -m "Updated helm"
-            git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
-            git remote -v
-
-            git push origin master
+            # git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
+            git push melvin master
             
