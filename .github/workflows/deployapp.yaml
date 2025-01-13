@@ -38,7 +38,7 @@ jobs:
             git status
             git add -A
             git commit -m "Updated helm"
-            git remote set-url melvin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
+            git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/melvinsamuel070/rev_app_helm.git
             # git fetch origin
             git remote -v
 
